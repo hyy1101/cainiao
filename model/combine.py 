@@ -1,0 +1,45 @@
+# coding: utf-8
+# filename: combine.py  
+# author: hyy1101.github.io
+
+import pandas as pd
+
+
+xgb1 = pd.read_csv('data/val_xgb_1.csv')
+xgb2 = pd.read_csv('data/val_xgb_2.csv')
+xgb3 = pd.read_csv('data/val_xgb_3.csv')
+xgb4 = pd.read_csv('data/val_xgb_4.csv')
+xgb5 = pd.read_csv('data/val_xgb_5.csv')
+xgball = pd.read_csv('data/val_xgb_6.csv')
+
+pred = pd.concat([xgball,xgb1,xgb2,xgb3,xgb4,xgb5])
+pred[['item_id','store_code','pred']].to_csv('data/xgb.csv',index=None,header=None)
+
+
+rf1 = pd.read_csv('data/val_rf_1.csv')
+rf2 = pd.read_csv('data/val_fr_2.csv')
+rf3 = pd.read_csv('data/val_rf_3.csv')
+rf4 = pd.read_csv('data/val_rf_4.csv')
+rf5 = pd.read_csv('data/val_rf_5.csv')
+rfall = pd.read_csv('data/val_rf_6.csv')
+
+pred = pd.concat([rfall,rf1,rf2,rf3,rf4,rf5])
+pred[['item_id','store_code','pred']].to_csv('rf.csv',index=None,header=None)
+
+
+
+gbrt1 = pd.read_csv('data/val_1')
+gbrt2 = pd.read_csv('data/val_2')
+gbrt3 = pd.read_csv('data/val_3')
+gbrt4 = pd.read_csv('data/val_4')
+gbrt5 = pd.read_csv('data/val_5')
+gbrtall = pd.read_csv('data/val_6')
+
+pred = pd.concat([gbrtall,gbrt1,gbrt2,gbrt3,gbrt4,gbrt5])
+pred[['item_id','store_code','pred']].to_csv('gbrt_166.csv',index=None,header=None)
+
+
+
+
+
+
